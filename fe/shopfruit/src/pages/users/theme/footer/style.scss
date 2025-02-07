@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "src/style/pages/theme" as theme;
+
+.footer{
+    .footer-about{
+        margin-bottom: 30px;
+        
+        .footer-about-logo{
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        ul li{
+            font-size: 16px;
+            color: map.get(theme.$theme-colors, "normal-text");
+            line-height: 36px;
+        }
+    }
+}

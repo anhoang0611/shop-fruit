@@ -123,9 +123,22 @@ const Header = () => {
                                 {
                                     menu?.map((menu, menuKey) => (
                                         <li key={menuKey} className={location.pathname === menu?.path ? 'active' : ''}>
-                                            <Link to={menu.path}>
-                                                {menu.name}
-                                            </Link>
+                                            <Link to={menu.path}>{menu.name}</Link>
+                                            {
+                                                menu.child && (
+                                                    <ul className='header-menu-dropdown'>
+                                                        {
+                                                            menu.child.map((childItem, childKey) => (
+                                                                <li key={`${menuKey}-${childKey}`}>
+                                                                    <Link to={childItem.path}>{childItem.name}</Link>
+                                                                </li>
+
+                                                            ))
+                                                        }
+
+                                                    </ul>
+                                                )
+                                            }
                                         </li>
 
 
