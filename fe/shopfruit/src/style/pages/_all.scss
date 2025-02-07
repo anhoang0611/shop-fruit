@@ -1,5 +1,6 @@
 @use "sass:map";
-@use "theme" as theme;
+@use "theme" ;
+@use "responsive";
 html,
 body{
     margin: 0;
@@ -30,3 +31,23 @@ body{
     flex: 0 0 50%;
     max-width: 50%;
 }
+
+@include responsive.Responsive(responsive.$MEDIUM_DEVICE){
+    .col-lg-3{
+        background: red;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@include responsive.Responsive(responsive.$DESKTOP){
+    .col-xl-3{
+        
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-xl-6{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
