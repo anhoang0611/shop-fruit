@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "src/style/pages/theme" as theme;
+@use "src/style/pages/_theme.scss" as theme;
 .header_top{
     background: #f5f5f5;
 }
@@ -56,4 +56,75 @@
             }
         }
     }
+}
+.header-logo{
+   padding: 15px 0;
+}
+
+.header-menu{
+    padding: 24px 0;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        
+        li {
+            list-style: none;
+
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                color: map.get(theme.$theme-colors, "bold-text");
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transition: all 0.3s;
+                padding: 5px 0;
+                display: block;
+            }
+        }
+        .active a {
+            color: map.get(theme.$theme-colors, "main");
+        }
+    }
+}
+
+.header-cart{
+    // background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0; 
+
+    ul{
+        display: flex;
+        // position: absolute;
+        margin-left: 20px;
+        li{
+            list-style: none;
+            position: relative;
+            margin-left: 20px;
+            
+            svg {
+                font-size: 25px;
+                color: map.get(theme.$theme-colors, "normal-text");
+            }
+            span{
+                color: white;
+                background: map.get(theme.$theme-colors, "main");
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                display: inline-block;
+                line-height: 20px;
+                font-size: 13px;
+                font-weight: 500;
+                text-align: center;
+                left: 13px;
+                top: -5px;
+
+            }
+        }
+    }
+
 }
