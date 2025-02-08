@@ -9,7 +9,7 @@ const Footer = () => {
 
                 <div className='col-lg-3 col-md-6 col-sm-12 col-xs-12'>
                     <div className='footer-about'>
-                        <h1 className='footer-about-logo'>TiGi Shop</h1>
+                        <h1 className='footer-about-logo'>Fuji Mart</h1>
                         <ul>
                             <li>Địa chỉ: 322 Lê Văn Lương</li>
                             <li>Phone: 0924-213-456</li>
