@@ -7,6 +7,7 @@ import {
     AiOutlineGlobal,
     AiOutlineMail,
     AiOutlineShoppingCart,
+    AiOutlineMenu,
 } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { Link, useLocation } from 'react-router-dom';
@@ -16,6 +17,7 @@ import { ROUTERS } from '../../../../utils/router';
 
 const Header = () => {
     const location = useLocation();
+    const [isShowCategories, setIsShowCategories] = useState(true);
     const [menu, setMenu] = useState([
         {
             name: "Trang chủ",
@@ -112,7 +114,7 @@ const Header = () => {
                     <div className='col-xl-3'>
 
                         <div className='header-logo'>
-                            <h1>TiGi Shop</h1>
+                            <h1>Fuji Mart</h1>
 
                         </div>
                     </div>
@@ -166,6 +168,41 @@ const Header = () => {
 
                     </div>
 
+                </div>
+
+            </div>
+
+            <div className='container'>
+                <div className='row categories-container'>
+                    <div className='col-lg-3 categories'>
+                        <div className='categories-all' onClick={() => setIsShowCategories(!isShowCategories)}>
+                            <AiOutlineMenu />
+                            Danh sách sản phẩm
+                        </div>
+                        {isShowCategories && (
+                            <ul className={isShowCategories ? '' : 'hidden'}>
+                                <li>
+                                    <Link to='#'> Tao</Link>
+                                </li>
+                                <li>
+                                    <Link to='#'> Lê</Link>
+                                </li>
+                                <li>
+                                    <Link to='#'> Chuối</Link>
+                                </li>
+                                <li>
+                                    <Link to='#'> Dưa</Link>
+                                </li>
+                                <li>
+                                    <Link to='#'> Lê</Link>
+                                </li>
+                                <li>
+                                    <Link to='#'> Tao</Link>
+                                </li>
+                            </ul>
+                        )}
+                    </div>
+                    <div className='col-lg-9'>Phai</div>
                 </div>
 
             </div>
