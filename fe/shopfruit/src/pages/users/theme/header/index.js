@@ -8,10 +8,11 @@ import {
     AiOutlineMail,
     AiOutlineShoppingCart,
     AiOutlineMenu,
+    AiOutlinePhone,
 } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { Link, useLocation } from 'react-router-dom';
-import { formatter } from "../../../../utils/fomater"
+import { formatter } from "../../../../utils/formatter";
 import { useState } from 'react';
 import { ROUTERS } from '../../../../utils/router';
 
@@ -202,9 +203,48 @@ const Header = () => {
                             </ul>
                         )}
                     </div>
-                    <div className='col-lg-9'>Phai</div>
-                </div>
+                    <div className='col-lg-9 search-container'>
+                        <div className='search '>
+                            <div className='search-form'>
+                                <form >
+                                    <input type='text' name='' value='' placeholder='Bạn cần tìm gì?' />
+                                    <button type='submit' className='site-btn'>
+                                        Tìm kiếm
+                                    </button>
 
+                                </form>
+
+                            </div>
+
+                            <div className='search-phone'>
+                                <div className='search-phone-icon'>
+                                    <AiOutlinePhone />
+                                </div>
+                                <div className='search-phone-text'>
+                                    <p>098765322</p>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+
+                            </div>
+
+                            <div className='item'>
+                                <div className='text'>
+                                    <span>Trái cây tươi</span>
+                                    <h2>
+                                        Rau quả <br />
+                                        sạch 100%
+                                    </h2>
+                                    <p>Miễn phí giao hàng tận nơi</p>
+                                    <Link to='#' className='primary-btn'>Mua ngay</Link>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </>
     );
