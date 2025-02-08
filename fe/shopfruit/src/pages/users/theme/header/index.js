@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { ROUTERS } from '../../../../utils/router';
 
 const Header = () => {
-    const location = useLocation();
+    let location = useLocation();
     const [isShowCategories, setIsShowCategories] = useState(true);
     const [menu, setMenu] = useState([
         {

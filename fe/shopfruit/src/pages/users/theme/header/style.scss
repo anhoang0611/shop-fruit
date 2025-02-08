@@ -2,7 +2,7 @@
 @use "src/style/pages/theme" as theme;
 
 
-$bannerImg: '../../../../assets/users/images/hero/banner_top.jpg';
+$bannerImg: '../../../../assets/users/images/hero/anh.jpg';
 
 
 
@@ -232,9 +232,10 @@ $bannerImg: '../../../../assets/users/images/hero/banner_top.jpg';
     
     .search-form{
         width: 610px;
-        height: 48px;
+        height: 50px;
         float: left;
         padding-left: 15px;
+        margin-bottom: 30px;
         
         form {
             display: flex;
@@ -308,16 +309,62 @@ $bannerImg: '../../../../assets/users/images/hero/banner_top.jpg';
     }
 
     .item{
-        margin-left: 20px;
+        margin-left: 15px;
         background-image: url(#{$bannerImg});
         background-repeat: no-repeat;
-        height: 40px;
+        height: 410px;
         display: flex;
-        align-items: center;
-        padding-left: 75px;
+        align-items:flex-end;
+        width: 99%;
+        
+        // padding-left: 75px;
         
         .text{
+            margin-left: 450px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 120px;
+            
+            span{
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 700;
+                color: map.get(theme.$theme-colors, "main");
+            }
+        }
+
+        h2{
+            font-size: 45px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 52px;
+            color: map.get(theme.$theme-colors, "bold-text");
+            margin: 10px 0;
+
+        }
+
+        p{
+            font-size: 16px;
+            color: #6f6f6f;
+            font-weight: 400;
+            line-height: 26px;
+            margin: 0 0 15px 0;
+        }
+
+        a{
+            display: inline-block;
+            font-size: 14px;
+            padding: 10px 28px 10px;
             color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: map.get(theme.$theme-colors, "main");
+            text-decoration: none;
+            letter-spacing: 2px;
+
         }
     }
 }
