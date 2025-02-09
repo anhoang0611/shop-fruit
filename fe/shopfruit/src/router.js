@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //router
-import Homepages from "./pages/users/homepages";
+import Homepages from "./pages/users/homePage";
 import ProfilePage from "./pages/users/profilePage";
 import { ROUTERS } from "./utils/router";
 

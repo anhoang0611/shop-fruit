@@ -183,22 +183,22 @@ const Header = () => {
                         {isShowCategories && (
                             <ul className={isShowCategories ? '' : 'hidden'}>
                                 <li>
-                                    <Link to='#'> Tao</Link>
+                                    <Link to='#'>Táo</Link>
                                 </li>
                                 <li>
-                                    <Link to='#'> Lê</Link>
+                                    <Link to='#'>Lê</Link>
                                 </li>
                                 <li>
-                                    <Link to='#'> Chuối</Link>
+                                    <Link to='#'>Chuối</Link>
                                 </li>
                                 <li>
-                                    <Link to='#'> Dưa</Link>
+                                    <Link to='#'>Dưa</Link>
                                 </li>
                                 <li>
-                                    <Link to='#'> Lê</Link>
+                                    <Link to='#'>Bưởi</Link>
                                 </li>
                                 <li>
-                                    <Link to='#'> Tao</Link>
+                                    <Link to='#'>Cam</Link>
                                 </li>
                             </ul>
                         )}
