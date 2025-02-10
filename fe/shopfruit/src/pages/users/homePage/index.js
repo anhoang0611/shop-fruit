@@ -3,7 +3,10 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
+import { formatter } from '../../../utils/formatter';
 import './style.scss';
+import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
 //categories images
 import cam from '../../../assets/users/images/categories/cam1.jpg';
 import tao from '../../../assets/users/images/categories/tao.jpg';
@@ -13,6 +16,13 @@ import nho from '../../../assets/users/images/categories/nho.jpg';
 //featured products images
 import thitbo from '../../../assets/users/images/features/thit-bo.jpg';
 import chuoi from '../../../assets/users/images/features/chuoi.jpg';
+import duahau from '../../../assets/users/images/features/dua-hau.jpg';
+import khoaitay from '../../../assets/users/images/features/khoai-tay.jpg';
+import oi from '../../../assets/users/images/features/oi.jpg';
+//banner images
+import banner1 from '../../../assets/users/images/banner/banner1.jpg';
+import banner2 from '../../../assets/users/images/banner/banner2.jpg';
+
 
 
 
@@ -74,7 +84,24 @@ const Homepages = () => {
                     img: chuoi,
                     name: 'Chuối',
                     price: 14000,
+                },
+                {
+                    img: duahau,
+                    name: 'Dưa hấu',
+                    price: 70000,
+                }, {
+
+                    img: khoaitay,
+                    name: 'Khoai tây',
+                    price: 16000,
+                },
+
+                {
+                    img: oi,
+                    name: 'Ổi',
+                    price: 12000,
                 }
+
             ]
         },
         freshMeat: {
@@ -87,6 +114,32 @@ const Homepages = () => {
                 }
 
             ]
+        },
+        fruits: {
+            title: 'Trái cây',
+            products: [
+                {
+                    img: chuoi,
+                    name: 'Chuối',
+                    price: 14000,
+                },
+                {
+                    img: duahau,
+                    name: 'Dưa hấu',
+                    price: 70000,
+                }, {
+
+                    img: khoaitay,
+                    name: 'Khoai tây',
+                    price: 16000,
+                },
+
+                {
+                    img: oi,
+                    name: 'Ổi',
+                    price: 12000,
+                }
+            ]
         }
     };
 
@@ -96,7 +149,7 @@ const Homepages = () => {
 
         Object.keys(data).forEach((key, index) => {
             tabLists.push(
-                <Tab key={index}>{data[key].title}</Tab>
+                <Tab key={index} >{data[key].title}</Tab>
             )
 
 
@@ -104,7 +157,31 @@ const Homepages = () => {
 
             data[key].products.forEach((product, prodIndex) => (
                 tabPanel.push(
-                    <div key={prodIndex}>{product.name}</div>
+                    <div className='col-lg-3' key={prodIndex}>
+                        <div className='featured-item'>
+                            <div className='featured-item-img' style={{ backgroundImage: `url(${product.img})` }}>
+                                <ul className='featured-item-img-hover'>
+                                    <li>
+                                        <AiOutlineEye />
+                                    </li>
+                                    <li>
+                                        <AiOutlineShoppingCart />
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <div className='featured-item-text'>
+                                <h6>
+                                    <Link to=''>{product.name}</Link>
+                                </h6>
+                                <h5>{formatter(product.price)}</h5>
+                            </div>
+
+
+                        </div>
+                    </div>
+
                 )
             ));
             tabPanels.push(tabPanel);
@@ -164,6 +241,25 @@ const Homepages = () => {
                         <h2>Sản phẩm nổi bật</h2>
                     </div>
                     {renderFeaturedProducts(featuredProducts)}
+                </div>
+
+            </div>
+            {/* featured products end */}
+
+            {/* banner start */}
+            <div className='container'>
+                <div className='banner'>
+                    <div className='banner-img'>
+                        <img src={banner1} alt='banner' />
+
+
+                    </div>
+                    <div className='banner-img'>
+                        <img src={banner2} alt='banner' />
+
+
+                    </div>
+
                 </div>
 
             </div>
