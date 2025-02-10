@@ -10,6 +10,7 @@ import {
     AiOutlineMenu,
     AiOutlinePhone,
 } from "react-icons/ai";
+import { BiUser } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link, useLocation } from 'react-router-dom';
 import { formatter } from "../../../../utils/formatter";
@@ -19,9 +20,11 @@ import { ROUTERS } from '../../../../utils/router';
 const Header = () => {
     let location = useLocation();
     const [isShowCategories, setIsShowCategories] = useState(true);
+    const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(false);
     const [menu, setMenu] = useState([
         {
             name: "Trang chủ",
+
             path: ROUTERS.USER.HOME,
         },
         {
@@ -60,6 +63,82 @@ const Header = () => {
 
     return (
         <>
+            <div className={`humberger-menu-overlay ${isShowHumbergerMenu ? "active" : ""}`} onClick={() => { setIsShowHumbergerMenu(false) }} >
+
+            </div>
+            <div className={`humberger-menu-wrapper ${isShowHumbergerMenu ? 'show' : ''}`}>
+                <div className='header-logo' >
+                    <h1>Fuji Mart</h1>
+                </div>
+
+                <div className='humberger-menu-cart'>
+                    <ul>
+                        <li>
+                            <Link to='#'>
+                                <AiOutlineShoppingCart />
+                                <span>5</span>
+                            </Link>
+
+                        </li>
+                    </ul>
+                    <div className='header-cart-price'>
+                        Giỏ hàng: <span>{formatter(1000000)}</span>
+
+                    </div>
+                </div>
+                <div className='humberger-menu-widget'>
+                    <div className='header-top-right-auth'>
+                        <Link to='#'>
+                            <BiUser />
+                            <span>Đăng nhập</span>
+                        </Link>
+
+
+
+                    </div>
+
+                </div>
+
+                <div className='humberger-menu-nav'>
+                    <ul>
+                        <li>
+                            Menu Item
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div className='header-top-right-social'>
+                    <Link to=''>
+                        <AiOutlineFacebook />
+                    </Link>
+                    <Link to=''>
+                        <AiOutlineInstagram />
+                    </Link>
+                    <Link to=''>
+                        <AiOutlineLinkedin />
+                    </Link>
+                    <Link to=''>
+                        <AiOutlineGlobal />
+                    </Link>
+                </div>
+
+                <div className='humberger-menu-contact'>
+                    <ul>
+                        <li className='fa fa-envelope'>
+                            hel@gmail.com
+
+                        </li>
+                        <li>Miễn phí giao hàng</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
             <div className='header_top'>
                 <div className='container'>
                     <div className='row'>
@@ -112,14 +191,14 @@ const Header = () => {
 
             <div className='container'>
                 <div className='row'>
-                    <div className='col-xl-3'>
+                    <div className='col-lg-3'>
 
                         <div className='header-logo'>
                             <h1>Fuji Mart</h1>
 
                         </div>
                     </div>
-                    <div className='col-xl-6'>
+                    <div className='col-lg-6'>
 
                         <nav className='header-menu'>
                             <ul>
@@ -153,7 +232,7 @@ const Header = () => {
                         </nav>
 
                     </div>
-                    <div className='col-xl-3'>
+                    <div className='col-lg-3'>
                         <div className='header-cart'>
                             <div className='header-cart-price'>
                                 <span>{formatter(1000000)}</span>
@@ -165,7 +244,16 @@ const Header = () => {
                                     </Link>
                                 </li>
                             </ul>
+
+                            <div className='header-cart-price'>
+                                Giỏ hàng: <span>{formatter(1000000)}</span>
+                            </div>
                         </div>
+
+                        <div className='hamberger-menu'>
+                            <AiOutlineMenu onClick={() => { setIsShowHumbergerMenu(!isShowHumbergerMenu) }} />
+                        </div>
+
 
                     </div>
 
