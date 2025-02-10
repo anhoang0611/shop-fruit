@@ -41,3 +41,48 @@
         }
     }
 }
+
+.featured{
+    margin-top: 50px;
+    
+
+    .section-title{
+        text-align: center;
+        margin-bottom: 35px;
+        h2{
+            position: relative;
+        }
+
+        h2:after{
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            right: 0;
+            height: 3px;
+            width: 80px;
+            background: map.get(theme.$theme-colors, 'main');
+            content: '';
+            margin: 0 auto;
+        }
+ 
+    }
+    
+    .react-tabs{
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            li{
+                list-style: none;
+                font-size: 18px;
+                color: map.get(theme.$theme-colors, 'normal-text');
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                margin-right: 25px;
+            }
+        }
+        
+
+    }
+}
