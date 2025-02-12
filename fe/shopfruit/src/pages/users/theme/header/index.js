@@ -9,6 +9,8 @@ import {
     AiOutlineShoppingCart,
     AiOutlineMenu,
     AiOutlinePhone,
+    AiOutlineDownCircle,
+    AiOutlineUpCircle,
 } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
@@ -16,11 +18,21 @@ import { Link, useLocation } from 'react-router-dom';
 import { formatter } from "../../../../utils/formatter";
 import { useState } from 'react';
 import { ROUTERS } from '../../../../utils/router';
+import { MdEmail } from 'react-icons/md';
 
 const Header = () => {
     let location = useLocation();
     const [isShowCategories, setIsShowCategories] = useState(true);
-    const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(false);
+    const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(true);
+    //toggle hamberger menu nav
+    const handleToggleSubmenu = (index) => {
+        const newMenu = JSON.parse(JSON.stringify(menu));
+        newMenu[index].isShowSubmenu = !newMenu[index].isShowSubmenu;
+        setMenu(newMenu);
+    }
+
+
+
     const [menu, setMenu] = useState([
         {
             name: "Trang chủ",
@@ -70,7 +82,7 @@ const Header = () => {
                 <div className='header-logo' >
                     <h1>Fuji Mart</h1>
                 </div>
-
+                {/* icon Shopping Cart */}
                 <div className='humberger-menu-cart'>
                     <ul>
                         <li>
@@ -86,28 +98,60 @@ const Header = () => {
 
                     </div>
                 </div>
+                {/* icon Đăng nhập */}
                 <div className='humberger-menu-widget'>
                     <div className='header-top-right-auth'>
                         <Link to='#'>
                             <BiUser />
                             <span>Đăng nhập</span>
                         </Link>
-
-
-
                     </div>
 
                 </div>
-
+                {/* dropdown Sản phẩm  */}
                 <div className='humberger-menu-nav'>
                     <ul>
-                        <li>
-                            Menu Item
-                        </li>
+                        {
+                            menu?.map((menuItem, menuKey) => {
+                                return (
+                                    <li key={menuKey} to={menuItem.path}>
+                                        <Link to={menuItem.path} onClick={() => {
+                                            handleToggleSubmenu(menuKey);
+
+                                        }}
+                                        >
+                                            {menuItem.name}
+                                            {
+                                                menuItem.child && (menuItem.isShowSubmenu ? <AiOutlineDownCircle /> : <AiOutlineUpCircle />)
+                                            }
+                                        </Link>
+                                        {/* dropdown khi click */}
+                                        {menuItem.child && menuItem.isShowSubmenu && (
+                                            <ul className={`header-menu-dropdown-tablet ${menuItem.isShowSubmenu ? "show-submenu" : ""}`}>
+                                                {menuItem.child.map((childItem, childKey) => (
+
+                                                    <li key={`${menuKey}-${childKey}`}>
+                                                        <Link
+                                                            to={childItem.path}
+
+                                                        >
+                                                            {childItem.name}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+
+                                    </li>);
+                            })
+                        }
+
+
                     </ul>
 
                 </div>
 
+                {/* icon Fb, ins,... */}
                 <div className='header-top-right-social'>
                     <Link to=''>
                         <AiOutlineFacebook />
@@ -122,10 +166,11 @@ const Header = () => {
                         <AiOutlineGlobal />
                     </Link>
                 </div>
-
+                {/* email, bannner */}
                 <div className='humberger-menu-contact'>
                     <ul>
-                        <li className='fa fa-envelope'>
+                        <li >
+                            <MdEmail />
                             hel@gmail.com
 
                         </li>
@@ -133,11 +178,6 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-
-
-
-
-
 
             <div className='header_top'>
                 <div className='container'>
@@ -245,9 +285,6 @@ const Header = () => {
                                 </li>
                             </ul>
 
-                            <div className='header-cart-price'>
-                                Giỏ hàng: <span>{formatter(1000000)}</span>
-                            </div>
                         </div>
 
                         <div className='hamberger-menu'>
