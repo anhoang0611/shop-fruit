@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { formatter } from '../../../utils/formatter';
 import './style.scss';
 import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
+
 //categories images
 import cam from '../../../assets/users/images/categories/cam1.jpg';
 import tao from '../../../assets/users/images/categories/tao.jpg';
@@ -23,6 +24,7 @@ import oi from '../../../assets/users/images/features/oi.jpg';
 import banner1 from '../../../assets/users/images/banner/banner1.jpg';
 import banner2 from '../../../assets/users/images/banner/banner2.jpg';
 
+import { ProductCard } from '../../../component';
 
 
 
@@ -127,11 +129,6 @@ const Homepages = () => {
                     img: duahau,
                     name: 'Dưa hấu',
                     price: 70000,
-                }, {
-
-                    img: khoaitay,
-                    name: 'Khoai tây',
-                    price: 16000,
                 },
 
                 {
@@ -140,7 +137,19 @@ const Homepages = () => {
                     price: 12000,
                 }
             ]
+        },
+        fastFood: {
+            title: 'Thức ăn nhanh',
+            products: [
+                {
+
+                    img: khoaitay,
+                    name: 'Khoai tây',
+                    price: 16000,
+                },
+            ]
         }
+
     };
 
     const renderFeaturedProducts = (data) => {
@@ -158,29 +167,9 @@ const Homepages = () => {
             data[key].products.forEach((product, prodIndex) => (
                 tabPanel.push(
                     <div className='col-lg-3' key={prodIndex}>
-                        <div className='featured-item'>
-                            <div className='featured-item-img' style={{ backgroundImage: `url(${product.img})` }}>
-                                <ul className='featured-item-img-hover'>
-                                    <li>
-                                        <AiOutlineEye />
-                                    </li>
-                                    <li>
-                                        <AiOutlineShoppingCart />
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                            <div className='featured-item-text'>
-                                <h6>
-                                    <Link to=''>{product.name}</Link>
-                                </h6>
-                                <h5>{formatter(product.price)}</h5>
-                            </div>
-
-
-                        </div>
+                        <ProductCard name={product.name} price={product.price} img={product.img} />
                     </div>
+
 
                 )
             ));

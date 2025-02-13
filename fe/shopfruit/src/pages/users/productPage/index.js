@@ -4,6 +4,13 @@ import "./style.scss";
 import { Link } from 'react-router-dom';
 import { categories } from '../theme/header';
 import { ROUTERS } from '../../../utils/router';
+import thitbo from '../../../assets/users/images/features/thit-bo.jpg';
+import chuoi from '../../../assets/users/images/features/chuoi.jpg';
+import duahau from '../../../assets/users/images/features/dua-hau.jpg';
+import khoaitay from '../../../assets/users/images/features/khoai-tay.jpg';
+import oi from '../../../assets/users/images/features/oi.jpg';
+import { ProductCard } from '../../../component';
+
 const ProductPage = () => {
 
     const sort = [
@@ -13,6 +20,32 @@ const ProductPage = () => {
         "Bán chạy nhất",
         "Đang giảm giá",
     ];
+    const products = [
+        {
+            img: thitbo,
+            name: 'Thịt bò',
+            price: 100000,
+        },
+        {
+            img: chuoi,
+            name: 'Chuối',
+            price: 130000,
+        },
+        {
+            img: duahau,
+            name: 'Dưa hấu',
+            price: 20000,
+        },
+        {
+            img: khoaitay,
+            name: 'Khoai tây',
+            price: 115000,
+        }, {
+            img: oi,
+            name: 'Ổi',
+            price: 150000,
+        },
+    ]
 
     return (
         <>
@@ -77,7 +110,19 @@ const ProductPage = () => {
 
                             </div>
                         </div>
-                        <div className='col-lg-9'>Danh Sách</div>
+                    </div>
+
+
+                    <div className='col-lg-9'>
+                        <div className='row'>
+                            {
+                                products.map((item, index) => (
+                                    <div className='col-lg-3' key={index}>
+                                        <ProductCard name={item.name} price={item.price} img={item.img} />
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
