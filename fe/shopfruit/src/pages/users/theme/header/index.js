@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.scss';
 import {
     AiOutlineFacebook,
@@ -21,15 +21,21 @@ import { ROUTERS } from '../../../../utils/router';
 import { MdEmail } from 'react-icons/md';
 
 const Header = () => {
-    let location = useLocation();
-    const [isShowCategories, setIsShowCategories] = useState(true);
+    const location = useLocation();
     const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(true);
+    const [isHome, setIsHome] = useState(location.pathname.length <= 1);
+    const [isShowCategories, setIsShowCategories] = useState(isHome);
+
+
+
+
     //toggle hamberger menu nav
     const handleToggleSubmenu = (index) => {
         const newMenu = JSON.parse(JSON.stringify(menu));
         newMenu[index].isShowSubmenu = !newMenu[index].isShowSubmenu;
         setMenu(newMenu);
-    }
+    };
+
 
 
 
@@ -73,6 +79,22 @@ const Header = () => {
 
     ]);
 
+    const categories = [
+        "Hoa quả",
+        "Thịt tươi",
+        "Thức ăn nhanh",
+
+    ];
+
+    useEffect(
+        () => {
+            const isHome = location.pathname.length <= 1;
+            setIsHome(isHome);
+
+            setIsShowCategories(isHome);
+
+        }, [location]
+    )
     return (
         <>
             <div className={`humberger-menu-overlay ${isShowHumbergerMenu ? "active" : ""}`} onClick={() => { setIsShowHumbergerMenu(false) }} >
@@ -243,8 +265,8 @@ const Header = () => {
                         <nav className='header-menu'>
                             <ul>
                                 {
-                                    menu?.map((menu, menuKey) => (
-                                        <li key={menuKey} className={location.pathname === menu?.path ? 'active' : ''}>
+                                    menu.map((menu, menuKey) => (
+                                        <li key={menuKey} className={location.pathname === menu.path ? 'active' : ''}>
                                             <Link to={menu.path}>{menu.name}</Link>
                                             {
                                                 menu.child && (
@@ -307,24 +329,12 @@ const Header = () => {
                         </div>
                         {isShowCategories && (
                             <ul className={isShowCategories ? '' : 'hidden'}>
-                                <li>
-                                    <Link to='#'>Táo</Link>
-                                </li>
-                                <li>
-                                    <Link to='#'>Lê</Link>
-                                </li>
-                                <li>
-                                    <Link to='#'>Chuối</Link>
-                                </li>
-                                <li>
-                                    <Link to='#'>Dưa</Link>
-                                </li>
-                                <li>
-                                    <Link to='#'>Bưởi</Link>
-                                </li>
-                                <li>
-                                    <Link to='#'>Cam</Link>
-                                </li>
+                                {categories.map((category, key) => (
+                                    <li key={key}>
+                                        <Link to={ROUTERS.USER.PRODUCT}>{category}</Link>
+                                    </li>
+
+                                ))}
                             </ul>
                         )}
                     </div>
@@ -352,20 +362,26 @@ const Header = () => {
 
                             </div>
 
-                            <div className='item'>
-                                <div className='text'>
-                                    <span>Trái cây tươi</span>
-                                    <h2>
-                                        Rau quả <br />
-                                        sạch 100%
-                                    </h2>
-                                    <p>Miễn phí giao hàng tận nơi</p>
-                                    <Link to='#' className='primary-btn'>Mua ngay</Link>
+                            {
+                                isHome && (
+                                    <div className='item'>
+                                        <div className='text'>
+                                            <span>Trái cây tươi</span>
+                                            <h2>
+                                                Rau quả <br />
+                                                sạch 100%
+                                            </h2>
+                                            <p>Miễn phí giao hàng tận nơi</p>
+                                            <Link to='#' className='primary-btn'>Mua ngay</Link>
 
 
-                                </div>
+                                        </div>
 
-                            </div>
+                                    </div>
+                                )
+                            }
+
+
                         </div>
                     </div>
 

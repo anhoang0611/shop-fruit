@@ -18,7 +18,7 @@ body{
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    // background: map.get($theme-colors, "main");
+    
     margin: auto;
 }
 
@@ -68,6 +68,10 @@ body{
 }
 
 @include responsive.Responsive(responsive.$TABLET_DEVICE){
+    .container{
+        max-width: 960px;
+    }
+    
     .col-md-6{
         flex: 0 0 50%;
         max-width: 50%;
@@ -78,14 +82,28 @@ body{
     }
 }
 @include responsive.Responsive(responsive.$MEDIUM_DEVICE){
+    .container{
+        max-width: 960px;
+    }
+    
     .col-lg-3{
-        background: red;
+        
         flex: 0 0 25%;
         max-width: 25%;
     }
+
+    .col-xl-12{
+        
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
 }
 
 @include responsive.Responsive(responsive.$WIDE_MOBILE){
+    .container{
+        max-width: 540px;
+    }
     .col-sm-6{
         flex: 0 0 50%;
         max-width: 50%;
@@ -98,6 +116,9 @@ body{
 }
 
 @include responsive.Responsive(responsive.$SMALL_MOBILE){
+    .container{
+        max-width: 350px;
+    }
     .col-xs-12{
         flex: 0 0 100%;
         max-width: 100%;

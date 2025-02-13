@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "src/style/pages/theme" as theme;
+@use "src/style/pages/responsive" as responsive;
 .container-categories-slide{
     max-width: 1221px !important;
     margin-top: 30px !important;
@@ -205,4 +206,26 @@
         object-fit: cover;
     }
 
+}
+
+@include responsive.Responsive(responsive.$MEDIUM_DEVICE) {
+    .container{
+        width: 990px;
+    
+    }
+}
+
+@include responsive.Responsive(responsive.$TABLET_DEVICE) {
+    .container{
+        width: 750px;
+    
+    }
+
+    
+}
+@include responsive.Responsive(responsive.$MEDIUM_DEVICE) {
+    .container{
+        width: 540px;
+    
+    }
 }

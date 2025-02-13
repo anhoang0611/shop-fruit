@@ -130,7 +130,7 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
 }
 
 .header-cart{
-    // background: red;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -370,12 +370,17 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
         }
     }
 }
-.humberger-menu-wrapper{
+.humberger-menu-wrapper, .hamberger-menu{
     display: none ;
 }
 
 @include responsive.Responsive(responsive.$TABLET_DEVICE){
-   .header_top,
+   
+    .search-container .item .text {
+        margin-bottom: 42px;
+    }
+   
+    .header_top,
    .header-menu,
    .header-cart{
         display: none;

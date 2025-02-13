@@ -7,6 +7,9 @@ import { ROUTERS } from "./utils/router";
 
 //theme
 import MasterLayout from "./pages/users/theme/layout";
+import ProductPage from "./pages/users/productPage";
+// import ProfilePage from "./pages/users/profilePage";
+
 
 const renderUserRoutes = () => {
     const userRoutes = [
@@ -17,6 +20,10 @@ const renderUserRoutes = () => {
         {
             path: ROUTERS.USER.PROFILE,
             component: <ProfilePage />
+        },
+        {
+            path: ROUTERS.USER.PRODUCT,
+            component: <ProductPage />
         }
 
     ]
