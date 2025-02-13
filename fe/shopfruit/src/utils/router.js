@@ -2,6 +2,7 @@ export const ROUTERS = {
     USER: {
         HOME: '/',
         PROFILE: '/profile',
-        PRODUCT: '/san-pham',
+        PRODUCTS: '/san-pham',
+        PRODUCT: '/san-pham/chi-tiet/:id',
     },
 };

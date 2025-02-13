@@ -2,6 +2,9 @@ import { formatter } from '../../utils/formatter';
 import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './style.scss';
+import { generatePath } from 'react-router-dom';
+import { ROUTERS } from '../../utils/router';
+
 
 import thitbo from '../../assets/users/images/features/thit-bo.jpg';
 import chuoi from '../../assets/users/images/features/chuoi.jpg';
@@ -28,7 +31,7 @@ const ProductCard = ({ img, name, price }) => {
 
                 <div className='featured-item-text'>
                     <h6>
-                        <Link to=''>{name}</Link>
+                        <Link to={generatePath(ROUTERS.USER.PRODUCT, { id: 1 })}>{name}</Link>
                     </h6>
                     <h5>{formatter(price)}</h5>
                 </div>
