@@ -39,6 +39,11 @@ body {
     max-width: 25%;
 }
 
+.col-lg-4 {
+    flex     : 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
 .col-lg-6 {
     flex     : 0 0 50%;
     max-width: 50%;
@@ -68,7 +73,7 @@ textarea {
     border       : 1px solid #ccc;
     padding-left : 10px;
     font-size    : 14px;
-    color        : #b2b2b2;
+    color        : #0c0b0b;
     border-radius: 3px;
 
     &:focus {
