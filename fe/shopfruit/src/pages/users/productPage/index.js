@@ -1,7 +1,12 @@
 import React from 'react';
+import Breadcrumb from '../theme/breadcrumb';
 
 const ProductPage = () => {
-    return <h1>Danh sach san pham</h1>
+    return (
+        <>
+            <Breadcrumb name='Danh sách sản phẩm' />
+        </>
+    )
 }
 
 export default ProductPage;
