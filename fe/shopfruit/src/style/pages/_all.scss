@@ -1,129 +1,158 @@
 @use "sass:map";
-@use "theme" ;
+@use "theme";
 @use "responsive";
+
 html,
-body{
+body {
     margin: 0;
 }
 
-*{
+* {
     font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-    
+    padding    : 0;
+    margin     : 0;
+
 }
 
-.container{
-    max-width: 1170px;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    
+.container {
+    max-width       : 1170px;
+    width           : 100%;
+    // padding-left : 15px;
+    // padding-right: 15px;
+    padding         : 15px 15px;
+
     margin: auto;
 }
 
-.row{
-    display: flex;
+.row {
+    display  : flex;
     flex-wrap: wrap;
 }
 
-.col-6{
-    flex: 0 0 50%;
+.col-6 {
+    flex     : 0 0 50%;
     max-width: 50%;
 }
-.col-lg-3{
-    flex: 0 0 25%;
+
+.col-lg-3 {
+    flex     : 0 0 25%;
     max-width: 25%;
 }
-.col-lg-6{
-    flex: 0 0 50%;
+
+.col-lg-6 {
+    flex     : 0 0 50%;
     max-width: 50%;
 }
-.col-lg-9{
-    flex: 0 0 75%;
+
+.col-lg-9 {
+    flex     : 0 0 75%;
     max-width: 75%;
 }
-.button-submit{
-    font-size: 14px;
-    color: #fff;
-    font-weight: 800;
+
+.button-submit {
+    font-size     : 14px;
+    color         : #fff;
+    font-weight   : 800;
     text-transform: uppercase;
-    display: inline-block;
-    padding: 16px 30px 17px;
-    background: map.get(theme.$theme-colors, 'main');
-    border: none;
-    height: 100%;
+    display       : inline-block;
+    padding       : 16px 30px 17px;
+    background    : map.get(theme.$theme-colors, 'main');
+    border        : none;
+    height        : 100%;
 }
 
-@include responsive.Responsive(responsive.$DESKTOP){
-    .col-xl-3{
-        
-        flex: 0 0 25%;
+input,
+textarea {
+    width        : 100%;
+    height       : 35px;
+    border       : 1px solid #ccc;
+    padding-left : 10px;
+    font-size    : 14px;
+    color        : #b2b2b2;
+    border-radius: 3px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    padding-top: 10px;
+}
+
+@include responsive.Responsive(responsive.$DESKTOP) {
+    .col-xl-3 {
+
+        flex     : 0 0 25%;
         max-width: 25%;
     }
-    .col-xl-6{
-        flex: 0 0 50%;
+
+    .col-xl-6 {
+        flex     : 0 0 50%;
         max-width: 50%;
     }
 }
 
-@include responsive.Responsive(responsive.$TABLET_DEVICE){
-    .container{
+@include responsive.Responsive(responsive.$TABLET_DEVICE) {
+    .container {
         max-width: 960px;
     }
-    
-    .col-md-6{
-        flex: 0 0 50%;
+
+    .col-md-6 {
+        flex     : 0 0 50%;
         max-width: 50%;
     }
-    .col-md-12{
-        flex: 0 0 100%;
+
+    .col-md-12 {
+        flex     : 0 0 100%;
         max-width: 100%;
     }
 }
-@include responsive.Responsive(responsive.$MEDIUM_DEVICE){
-    .container{
+
+@include responsive.Responsive(responsive.$MEDIUM_DEVICE) {
+    .container {
         max-width: 960px;
     }
-    
-    .col-lg-3{
-        
-        flex: 0 0 25%;
+
+    .col-lg-3 {
+
+        flex     : 0 0 25%;
         max-width: 25%;
     }
 
-    .col-xl-12{
-        
-        flex: 0 0 100%;
+    .col-xl-12 {
+
+        flex     : 0 0 100%;
         max-width: 100%;
     }
-    
+
 }
 
-@include responsive.Responsive(responsive.$WIDE_MOBILE){
-    .container{
+@include responsive.Responsive(responsive.$WIDE_MOBILE) {
+    .container {
         max-width: 540px;
     }
-    .col-sm-6{
-        flex: 0 0 50%;
+
+    .col-sm-6 {
+        flex     : 0 0 50%;
         max-width: 50%;
     }
-    .col-sm-12{
-        flex: 0 0 100%;
+
+    .col-sm-12 {
+        flex     : 0 0 100%;
         max-width: 100%;
     }
 
 }
 
-@include responsive.Responsive(responsive.$SMALL_MOBILE){
-    .container{
+@include responsive.Responsive(responsive.$SMALL_MOBILE) {
+    .container {
         max-width: 350px;
     }
-    .col-xs-12{
-        flex: 0 0 100%;
+
+    .col-xs-12 {
+        flex     : 0 0 100%;
         max-width: 100%;
     }
 
 }
-
-
