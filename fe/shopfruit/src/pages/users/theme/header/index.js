@@ -20,6 +20,12 @@ import { useState } from 'react';
 import { ROUTERS } from '../../../../utils/router';
 import { MdEmail } from 'react-icons/md';
 
+export const categories = [
+    "Hoa quả",
+    "Thịt tươi",
+    "Thức ăn nhanh",
+];
+
 const Header = () => {
     const location = useLocation();
     const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(true);
@@ -79,12 +85,7 @@ const Header = () => {
 
     ]);
 
-    const categories = [
-        "Hoa quả",
-        "Thịt tươi",
-        "Thức ăn nhanh",
 
-    ];
 
     useEffect(
         () => {
