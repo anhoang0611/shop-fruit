@@ -3,23 +3,15 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
-import { Link } from 'react-router-dom';
-import { formatter } from '../../../utils/formatter';
 import './style.scss';
-import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
-
+import { featuredProducts } from '../../../utils/common';
 //categories images
 import cam from '../../../assets/users/images/categories/cam1.jpg';
 import tao from '../../../assets/users/images/categories/tao.jpg';
 import buoi from '../../../assets/users/images/categories/buoi.jpg';
 import le from '../../../assets/users/images/categories/le.jpg';
 import nho from '../../../assets/users/images/categories/nho.jpg';
-//featured products images
-import thitbo from '../../../assets/users/images/features/thit-bo.jpg';
-import chuoi from '../../../assets/users/images/features/chuoi.jpg';
-import duahau from '../../../assets/users/images/features/dua-hau.jpg';
-import khoaitay from '../../../assets/users/images/features/khoai-tay.jpg';
-import oi from '../../../assets/users/images/features/oi.jpg';
+
 //banner images
 import banner1 from '../../../assets/users/images/banner/banner1.jpg';
 import banner2 from '../../../assets/users/images/banner/banner2.jpg';
@@ -73,84 +65,7 @@ const Homepages = () => {
             name: 'Nho',
         }
     ];
-    const featuredProducts = {
-        all: {
-            title: 'Toàn bộ',
-            products: [
-                {
-                    img: thitbo,
-                    name: 'Thịt bò nạc',
-                    price: 20000,
-                },
-                {
-                    img: chuoi,
-                    name: 'Chuối',
-                    price: 14000,
-                },
-                {
-                    img: duahau,
-                    name: 'Dưa hấu',
-                    price: 70000,
-                }, {
 
-                    img: khoaitay,
-                    name: 'Khoai tây',
-                    price: 16000,
-                },
-
-                {
-                    img: oi,
-                    name: 'Ổi',
-                    price: 12000,
-                }
-
-            ]
-        },
-        freshMeat: {
-            title: 'Thịt tươi',
-            products: [
-                {
-                    img: thitbo,
-                    name: 'Thịt bò nạc',
-                    price: 20000,
-                }
-
-            ]
-        },
-        fruits: {
-            title: 'Trái cây',
-            products: [
-                {
-                    img: chuoi,
-                    name: 'Chuối',
-                    price: 14000,
-                },
-                {
-                    img: duahau,
-                    name: 'Dưa hấu',
-                    price: 70000,
-                },
-
-                {
-                    img: oi,
-                    name: 'Ổi',
-                    price: 12000,
-                }
-            ]
-        },
-        fastFood: {
-            title: 'Thức ăn nhanh',
-            products: [
-                {
-
-                    img: khoaitay,
-                    name: 'Khoai tây',
-                    price: 16000,
-                },
-            ]
-        }
-
-    };
 
     const renderFeaturedProducts = (data) => {
         const tabLists = [];
