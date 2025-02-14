@@ -6,8 +6,9 @@ import buoi2 from "../../../assets/users/images/categories/buoi2.jpg";
 import buoi3 from "../../../assets/users/images/categories/buoi3.jpg";
 import { AiOutlineEye, AiOutlineFacebook, AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import { formatter } from "../../../utils/formatter";
-import { ProductCard } from '../../../component';
+import { ProductCard, Quantity } from '../../../component';
 import { featuredProducts } from '../../../utils/common';
+
 const ProductPageDetail = () => {
 
     const img = [buoi, buoi2, buoi3];
@@ -16,7 +17,7 @@ const ProductPageDetail = () => {
             <Breadcrumb name='Chi tiết sản phẩm' />
             <div className='container'>
                 <div className='row'>
-                    <div className='col-lg-6 product-detail-pic'>
+                    <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 product-detail-pic'>
 
                         <img src={buoi} alt="product-pic" />
 
@@ -30,7 +31,7 @@ const ProductPageDetail = () => {
                     </div>
 
 
-                    <div className='col-lg-6 product-detail-text'>
+                    <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 product-detail-text'>
                         <h2>Trái cây</h2>
                         <div className='seen-icon'>
                             <AiOutlineEye />
@@ -40,7 +41,7 @@ const ProductPageDetail = () => {
                         <p>
                             FuJi Mart là một cửa hàng nông sảnbán lẻ chuyên cung cấp các sản phẩm nông nghiệp tươi sống và chất lượng cao. Các sản phẩm thường bao gồm rau củ quả, trái cây, thịt, trứng, sữa và các sản phẩm chế biến từ nông sản. Ngoài ra, cửa hàng cũng có thể cung cấp các sản phẩm hữu cơ và không chứa hóa chất, đáp ứng nhu cầu ngày càng cao của người tiêu dùng về thực phẩm sạch và bền vững.
                         </p>
-
+                        <Quantity />
                         <ul>
                             <li>
                                 <b>Tình trạng: </b><span>Còn hàng</span>
