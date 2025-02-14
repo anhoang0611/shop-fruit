@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "../../../style/pages/theme"as theme;
+
+.table-cart {
+    overflow-y: auto;
+    width     : 100%;
+
+    table {
+        width: 100%;
+
+        thead tr th {
+            text-align: start;
+        }
+
+        td,
+        th {
+            padding      : 20px 0;
+            border-bottom: 1px solid #d8d6d6;
+
+            .quantity-container {
+                justify-content: flex-start;
+
+                &::first-child {
+                    padding-left: -2px !important;
+                }
+            }
+        }
+
+        .shopping-cart-item {
+            display    : flex;
+            align-items: center;
+            column-gap : 10px;
+
+
+            img {
+                width     : 100px;
+                height    : 100px;
+                object-fit: contain;
+
+            }
+
+        }
+
+        .icon-close {
+            cursor: pointer;
+
+            svg {
+                transform : rotate(180deg);
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                color: red;
+
+                svg {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+
+
+    }
+
+
+}
