@@ -3,13 +3,13 @@ import { Routes, Route } from "react-router-dom";
 //router
 import Homepages from "./pages/users/homePage";
 import ProfilePage from "./pages/users/profilePage";
+import ShoppingCartPage from "./pages/users/shoppingCartPage";
 import { ROUTERS } from "./utils/router";
 
 //theme
 import MasterLayout from "./pages/users/theme/layout";
 import ProductPage from "./pages/users/productPage";
 import ProductPageDetail from "./pages/users/productPageDetail";
-// import ProfilePage from "./pages/users/profilePage";
 
 
 const renderUserRoutes = () => {
@@ -29,6 +29,10 @@ const renderUserRoutes = () => {
         {
             path: ROUTERS.USER.PRODUCT,
             component: <ProductPageDetail />
+        },
+        {
+            path: ROUTERS.USER.SHOPPING_CART,
+            component: <ShoppingCartPage />
         }
 
     ]

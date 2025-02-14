@@ -1,9 +1,4 @@
-import { formatter } from '../../utils/formatter';
-import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 import './style.scss';
-import { generatePath } from 'react-router-dom';
-import { ROUTERS } from '../../utils/router';
 
 
 const Quantity = ({ hasAddToCart = true }) => {

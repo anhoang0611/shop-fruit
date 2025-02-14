@@ -39,7 +39,7 @@ const ProductPageDetail = () => {
                         </div>
                         <h3>{formatter(100000)}</h3>
                         <p>
-                            FuJi Mart là một cửa hàng nông sảnbán lẻ chuyên cung cấp các sản phẩm nông nghiệp tươi sống và chất lượng cao. Các sản phẩm thường bao gồm rau củ quả, trái cây, thịt, trứng, sữa và các sản phẩm chế biến từ nông sản. Ngoài ra, cửa hàng cũng có thể cung cấp các sản phẩm hữu cơ và không chứa hóa chất, đáp ứng nhu cầu ngày càng cao của người tiêu dùng về thực phẩm sạch và bền vững.
+                            FuJi Mart là một cửa hàng nông sản bán lẻ chuyên cung cấp các sản phẩm nông nghiệp tươi sống và chất lượng cao. Các sản phẩm thường bao gồm rau củ quả, trái cây, thịt, trứng, sữa và các sản phẩm chế biến từ nông sản. Ngoài ra, cửa hàng cũng có thể cung cấp các sản phẩm hữu cơ và không chứa hóa chất, đáp ứng nhu cầu ngày càng cao của người tiêu dùng về thực phẩm sạch và bền vững.
                         </p>
                         <Quantity />
                         <ul>
