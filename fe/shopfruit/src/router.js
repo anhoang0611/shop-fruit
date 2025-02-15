@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Homepages from "./pages/users/homePage";
 import ProfilePage from "./pages/users/profilePage";
 import ShoppingCartPage from "./pages/users/shoppingCartPage";
+import CheckoutPage from "./pages/users/checkoutPage";
 import { ROUTERS } from "./utils/router";
 
 //theme
@@ -33,6 +34,10 @@ const renderUserRoutes = () => {
         {
             path: ROUTERS.USER.SHOPPING_CART,
             component: <ShoppingCartPage />
+        },
+        {
+            path: ROUTERS.USER.CHECKOUT,
+            component: <CheckoutPage />
         }
 
     ]

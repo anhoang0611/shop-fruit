@@ -1,3 +1,5 @@
+import {memo} from 'react';
+
 import { formatter } from '../../utils/formatter';
 import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -5,12 +7,6 @@ import './style.scss';
 import { generatePath } from 'react-router-dom';
 import { ROUTERS } from '../../utils/router';
 
-
-import thitbo from '../../assets/users/images/features/thit-bo.jpg';
-import chuoi from '../../assets/users/images/features/chuoi.jpg';
-import duahau from '../../assets/users/images/features/dua-hau.jpg';
-import khoaitay from '../../assets/users/images/features/khoai-tay.jpg';
-import oi from '../../assets/users/images/features/oi.jpg';
 
 const ProductCard = ({ img, name, price }) => {
     return (
@@ -44,4 +40,4 @@ const ProductCard = ({ img, name, price }) => {
     )
 }
 
-export default ProductCard;
+export default memo(ProductCard);
