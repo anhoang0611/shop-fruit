@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.scss";
 import { Link } from 'react-router-dom';
 import { ROUTERS } from './../../../../utils/router';
+import {memo} from 'react';
 
 const Breadcrumb = (props) => {
     return (
@@ -25,4 +26,4 @@ const Breadcrumb = (props) => {
     );
 }
 
-export default Breadcrumb;
+export default memo(Breadcrumb);

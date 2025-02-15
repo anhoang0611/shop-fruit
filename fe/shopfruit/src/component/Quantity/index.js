@@ -1,4 +1,5 @@
 import './style.scss';
+import {memo} from 'react';
 
 
 const Quantity = ({ hasAddToCart = true }) => {
@@ -20,4 +21,4 @@ const Quantity = ({ hasAddToCart = true }) => {
     )
 }
 
-export default Quantity;
+export default memo(Quantity);
