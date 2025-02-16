@@ -252,7 +252,7 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
 
 
     .search-form {
-        width        : 610px;
+        width        : 525px;
         height       : 50px;
         float        : left;
         padding-left : 15px;
@@ -356,6 +356,21 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
                 font-weight   : 700;
                 color         : map.get(theme.$theme-colors, "main");
             }
+
+        }
+
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            margin-left  : 15px;
+            margin-bottom: 50px;
+            max-width    : 600px;
+
+
+            .text {
+                // margin-left  : 40px;
+                margin-bottom: 50px;
+            }
+
         }
 
         h2 {
@@ -394,13 +409,52 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
 .humberger-menu-wrapper,
 .hamberger-menu {
     display: none;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width     : 96%;
+        margin-top: -25px;
+    }
 }
+
 
 @include responsive.Responsive(responsive.$TABLET_DEVICE) {
 
-    .search-container .item .text {
-        margin-bottom: 42px;
+    .search-container {
+
+
+        .search-form {
+            width: 375px;
+
+
+            button {
+                width       : 40%;
+                margin-right: 15px;
+                height      : 50px;
+            }
+        }
+
+        .search-phone {
+            margin-left: 10px;
+        }
+
+        .item {
+            margin-left  : 15px;
+            margin-bottom: 50px;
+            max-width    : 525px;
+
+
+            .text {
+                margin-bottom: 28px;
+                margin-left  : 347px;
+            }
+        }
     }
+
+    // .search-container .item .text {
+    //     margin-bottom: 10px;
+
+
+    // }
 
     .header_top,
     .header-menu,
@@ -602,3 +656,19 @@ $bannerImg: '../../../../assets/users/images/hero/anh.jpg';
 
 
 }
+
+@include responsive.Responsive(responsive.$WIDE_MOBILE) {
+    .search-container {
+        .item {
+            margin-left  : 15px;
+            margin-bottom: 50px;
+            max-width    : 525px;
+
+            .text {
+                margin-bottom: 28px;
+            }
+        }
+    }
+}
+
+@include responsive.Responsive(responsive.$SMALL_MOBILE) {}

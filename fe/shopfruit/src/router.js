@@ -46,13 +46,6 @@ const renderUserRoutes = () => {
 
     ]
 
-    const adminRoutes = [
-        {
-            path: ROUTERS.ADMIN.LOGIN,
-            component: <LoginAdPage />
-        }
-    ]
-
     return (
         <MasterLayout>
             <Routes>
