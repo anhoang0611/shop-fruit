@@ -2,6 +2,7 @@
 @use "../../../style/pages/theme"as theme;
 
 
-.container {
+.order {
+    display            : flex;
     // background-color: map.get(theme.$theme-colors, 'main');
 }

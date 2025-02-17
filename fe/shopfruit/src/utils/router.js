@@ -12,5 +12,6 @@ export const ROUTERS = {
   ADMIN: {
     LOGIN: `${ADMIN_PATH}/dang-nhap`,
     ORDER: `${ADMIN_PATH}/dat-hang`,
+    LOGOUT: `${ADMIN_PATH}/dang-xuat`,
   },
 };
