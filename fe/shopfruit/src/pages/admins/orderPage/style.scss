@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "../../../style/pages/theme"as theme;
+
+
+.container {
+    // background-color: map.get(theme.$theme-colors, 'main');
+}
