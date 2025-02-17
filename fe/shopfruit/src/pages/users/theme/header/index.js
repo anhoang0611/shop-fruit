@@ -14,7 +14,7 @@ import {
 } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { formatter } from "../../../../utils/formatter";
 import { useState } from "react";
 import { ROUTERS } from "../../../../utils/router";
@@ -23,6 +23,7 @@ import { MdEmail } from "react-icons/md";
 export const categories = ["Hoa quả", "Thịt tươi", "Thức ăn nhanh"];
 
 const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [isShowHumbergerMenu, setIsShowHumbergerMenu] = useState(true);
   const [isHome, setIsHome] = useState(location.pathname.length <= 1);
@@ -222,7 +223,7 @@ const Header = () => {
                     <AiOutlineGlobal />
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => navigate(ROUTERS.ADMIN.LOGIN)}>
                   <Link to="">
                     <FiUser />
                   </Link>
