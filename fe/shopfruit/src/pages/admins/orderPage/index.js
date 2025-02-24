@@ -1,7 +1,33 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import "./style.scss";
 import { formatter } from "../../../utils/formatter";
+import { FaChevronLeft, FaChevronRight, FaChevronDown } from "react-icons/fa";
+
 const OrderAdPage = () => {
+  const [activeDropdown, setActiveDropdown] = useState(false);
+  const STATUS = {
+    ORDERED: {
+      id: "ORDERED",
+      name: "Đã đặt",
+      className: "orders-dropdown-item",
+    },
+    PREPARING: {
+      id: "PREPARING",
+      name: "Đang chuẩn bị",
+      className: "orders-dropdown-item",
+    },
+    DELIVERED: {
+      id: "DELIVERED",
+      name: "Đã giao hàng",
+      className: "orders-dropdown-item",
+    },
+    CANCELLED: {
+      id: "CANCELLED",
+      name: "Đã hủy",
+      className: "orders-dropdown-item",
+    },
+  };
+
   const orders = [
     {
       id: 1,
@@ -49,7 +75,25 @@ const OrderAdPage = () => {
                     <span>{new Date(order.date).toLocaleDateString()}</span>
                   </td>
                   <td>
-                    <span>{order.status}</span>
+                    <div className="orders-dropdown">
+                      <button>
+                        Đã đặt
+                        <FaChevronDown />
+                      </button>
+
+                      {activeDropdown === orders.id && (
+                        <div className="orders-dropdown-menu">
+                          {Object.values(STATUS).map((status) => (
+                            <button
+                              className={status.className}
+                              key={status.key}
+                            >
+                              {status.name}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -60,8 +104,8 @@ const OrderAdPage = () => {
         <div className="orders-footer">
           <div className="orders-pagination">
             <div className="orders-page-number">
-              <button type="button" className="orders-page-btn">
-                <i className="fa-solid fa-chevron-left"></i>
+              <button className="orders-page-btn">
+                <FaChevronLeft />
               </button>
               <button className="orders-page-btn orders-page-btn--active">
                 1
@@ -71,7 +115,7 @@ const OrderAdPage = () => {
               <button className="orders-page-btn">4</button>
               <button className="orders-page-btn">5</button>
               <button className="orders-page-btn">
-                <i className="fa-solid fa-chevron-right"></i>
+                <FaChevronRight />
               </button>
             </div>
           </div>

@@ -33,15 +33,24 @@
         margin-bottom  : 20px;
     }
 
+    &-page-number {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+    }
+
     &-page-btn {
-        cursor       : pointer;
-        min-width    : 30px;
-        padding      : 0 12px;
-        font-size    : 14px;
-        color        : map.get(theme.$theme-colors, "normal-text");
-        background   : #fff;
-        border       : 1px solid #e0e0e0;
-        border-radius: 5px;
+        cursor         : pointer;
+        min-width      : 30px;
+        padding        : 0 12px;
+        font-size      : 14px;
+        color          : map.get(theme.$theme-colors, "normal-text");
+        background     : #fff;
+        border         : 1px solid #e0e0e0;
+        border-radius  : 5px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
 
         &:hover:not(&--active) {
             background: #e6e0e0;
